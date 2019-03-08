@@ -1,0 +1,11 @@
+create database how2java;
+CREATE table category_(
+  id int not null auto_increment,
+  name varchar(20)NOT NULL
+);
+
+create database how2java-slaver;
+CREATE table category_(
+  id int not null auto_increment,
+  name varchar(20)NOT NULL
+);

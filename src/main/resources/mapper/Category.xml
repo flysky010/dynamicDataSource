@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.how2java.springboot.mapper.CategoryMapper">
+
+  <resultMap id="categoryResultMap" type="com.how2java.springboot.pojo.Category">
+    <result property="id" column="id" javaType="int" jdbcType="INTEGER" />
+    <result property="name" column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <!--<select id="findAll" resultType="Category">-->
+            <!--select id, name from category_-->
+  <!--</select>-->
+
+  <select id="findAll" resultMap="categoryResultMap">
+            select id, name from category_
+  </select>
+
+  <insert id="save">
+    insert into category_ ( name ) values (#{name})
+  </insert>
+
+  <delete id="delete" parameterType="int">
+    delete from category_ where id= #{id}
+  </delete>
+
+  <select id="get" resultType="com.how2java.springboot.pojo.Category">
+    select * from category_ where id= #{id}
+  </select>
+
+  <update id="update" parameterType="com.how2java.springboot.pojo.Category">
+    update category_ set name=#{name} where id=#{id}
+  </update>
+</mapper>

@@ -1,0 +1,9 @@
+use how2java;
+insert into category_(name)values('name01');
+insert into category_(name)values('name02');
+insert into category_(name)values('name03');
+
+use how2java-slaver;
+insert into category_(name)values('name01');
+insert into category_(name)values('name02');
+insert into category_(name)values('name03');
